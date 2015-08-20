@@ -28,10 +28,15 @@ public class Paddle extends Actor
          if(getX()==(getWorld().getWidth()-1) && Greenfoot.isKeyDown ("right"))
         {
             setLocation(0,getY());
+           if(myBall!=null)
+            myBall.ballTunnel();
+            
         }
         if(getX()==0 && Greenfoot.isKeyDown ("left"))
         {
             setLocation(getWorld().getWidth(),getY());
+            if(myBall!=null)
+            myBall.ballTunnel();
         }
         if (Greenfoot.isKeyDown ("left")) {
             move(-9);

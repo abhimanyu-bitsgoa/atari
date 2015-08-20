@@ -86,11 +86,12 @@ public class Ball extends Actor
     /**
      * Check whether we're out (bottom of screen).
      */
-    private void checkOut()
+    public void checkOut()
     {
         if (getY() == getWorld().getHeight()-1) {
             ((Board) getWorld()).ballIsOut();
             getWorld().removeObject(this);
+            
         }
     }
     
@@ -143,4 +144,18 @@ public class Ball extends Actor
         deltaY = -5;
         stuck = false;
     }
-}
+     /**
+      * To solve ball pad bug
+      */
+    
+     public void ballTunnel()
+    {
+        
+            ((Board) getWorld()).ballIsOut();
+            getWorld().removeObject(this);
+            
+        
+    }
+     
+   }
+
