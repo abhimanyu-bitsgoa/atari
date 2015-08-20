@@ -47,7 +47,7 @@ public class Ball extends Actor
         if(brick!=null)
         {
             Greenfoot.playSound("blip1.wav");
-            getWorld().removeObject(brick);
+            
             deltaY = -deltaY;
         }
     }

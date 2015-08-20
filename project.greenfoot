@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Thu Aug 20 15:05:57 IST 2015
+#Thu Aug 20 15:21:04 IST 2015
 target2.width=80
 target5.naviview.expanded=true
 target1.type=ClassTarget
@@ -30,6 +30,7 @@ target1.editor.height=772
 dependency4.from=Board
 dependency5.to=Ball
 target4.editor.height=700
+class.Score.superclass=greenfoot.Actor
 target1.name=Ball
 target7.editor.height=700
 dependency8.from=Ball
