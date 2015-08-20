@@ -27,9 +27,30 @@ public class Board extends World
         paddle = new Paddle(s);
         addObject ( paddle, getWidth() / 2, getHeight() - 40);
         addObject(s,58,56);
-        addObject(new SimpleBrick(), 380, 260);
-        addObject(new DoubleBrick(), 480, 260);
-    };
+        
+        createBlocks();
+        
+    }
+    
+    private void createBlocks()
+    {
+        int deltaX= 67 ,deltaY= 52 ,x,y= 121,randomNo;
+        while(y<getHeight()/2)
+        {
+            x=163;
+            while(x<getWidth()-163)
+            {
+                randomNo=Greenfoot.getRandomNumber(100);
+                if(randomNo<20)
+                addObject(new DoubleBrick(),x, y);
+                else
+                addObject(new SimpleBrick(),x, y);
+                x+=deltaX;
+            }
+            y+=deltaY;
+        }
+        
+    }
     
     public void ballIsOut()
     {
