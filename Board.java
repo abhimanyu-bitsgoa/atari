@@ -22,10 +22,11 @@ public class Board extends World
         setBackground(img);
         
         setPaintOrder ( Ball.class, Smoke.class );
+        Score s=new Score();
         
-        paddle = new Paddle();
+        paddle = new Paddle(s);
         addObject ( paddle, getWidth() / 2, getHeight() - 40);
-        addObject(new Score(),58,56);
+        addObject(s,58,56);
         addObject(new SimpleBrick(), 380, 260);
         addObject(new DoubleBrick(), 480, 260);
     };

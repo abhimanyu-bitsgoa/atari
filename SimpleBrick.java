@@ -13,9 +13,16 @@ public class SimpleBrick extends Bricks
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private int count=1;
+    
+   
+  
     public void act() 
     {
-       if(checkBall())count--;
+       if(checkBall())
+       {
+           count--;
+           getWorld().getObjects(Score.class);
+        }
        if(count==0)getWorld().removeObject(this);
        
     }    
