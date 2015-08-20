@@ -9,7 +9,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Paddle extends Actor
 {
-    private Ball myBall;  // used before ball gets released
+    private Ball myBall;// used before ball gets released
+    private Score score;
+    
+    Paddle(Score s)
+    {
+        score=s;
+    }
 
     /**
      * When the paddle gets created, create a ball as well.
@@ -69,7 +75,7 @@ public class Paddle extends Actor
      */
     public void newBall()
     {
-        myBall = new Ball();
+        myBall = new Ball(score);
         getWorld().addObject (myBall, getX(), getY()-33);
     }
         

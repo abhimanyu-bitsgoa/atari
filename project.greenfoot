@@ -1,6 +1,5 @@
 #Greenfoot properties
-#Thu Aug 20 19:40:19 IST 2015
-class.MagneticPaddle.image=MagneticPaddle.png
+#Thu Aug 20 22:46:23 IST 2015
 target2.width=110
 target8.name=Smoke
 target5.naviview.expanded=true
@@ -42,7 +41,6 @@ target1.name=Ball
 target7.editor.height=700
 dependency8.from=Ball
 class.SimpleBrick.image=Block.png
-class.MagneticPaddle.superclass=PowerBrick
 target3.editor.y=20
 target3.editor.x=40
 target4.typeParameters=
@@ -75,6 +73,7 @@ dependency1.from=Ball
 target5.editor.y=34
 target5.editor.x=95
 mainWindow.y=-8
+class.MagnetPower.superclass=Powerups
 mainWindow.x=-8
 target5.showInterface=false
 class.Smoke.superclass=greenfoot.Actor
@@ -147,7 +146,7 @@ dependency1.type=UsesDependency
 target4.type=ClassTarget
 target8.width=80
 dependency8.to=Bricks
-simulation.speed=59
+simulation.speed=49
 target9.width=90
 target7.height=50
 dependency5.type=UsesDependency
@@ -160,6 +159,7 @@ readme.editor.y=114
 readme.editor.x=111
 target7.width=80
 target6.editor.height=754
+class.MagnetPower.image=MagnetPowerUp.png
 dependency3.from=Ball
 target1.typeParameters=
 class.Actor.superclass=

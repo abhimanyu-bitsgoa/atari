@@ -11,9 +11,14 @@ public class Ball extends Actor
     private int deltaX;         // x movement speed
     private int deltaY;         // y movement speed
     private int count = 2;
+    private Score score;
+    private boolean stuck = true; // stuck to paddle
     
-    private boolean stuck = true;   // stuck to paddle
     
+    Ball(Score s)
+    {
+        score=s;
+    }
     /**
      * Act. Move if we're not stuck.
      */
@@ -47,7 +52,7 @@ public class Ball extends Actor
         if(brick!=null)
         {
             Greenfoot.playSound("blip1.wav");
-            
+            score.addScore();
             deltaY = -deltaY;
         }
     }

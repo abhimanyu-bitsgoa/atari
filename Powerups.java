@@ -12,21 +12,33 @@ public class Powerups extends Actor
      * Act - do whatever the Powerups wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    
     public void act() 
     {
         // Add your action code here.
-        
+        drop();
         
     }  
     
     
     public void drop(){
-        
-        setLocation(getX(),getY()+3);
-        if(intersects(Paddle.class)==true){
-        getWorld().removeObject(this);
-        }
-    
+        this.setLocation(getX(),getY()+3);
     
     }
+    
+   
+    /*
+    public boolean transform(){
+        if(this.isTouching(Paddle.class)){
+            
+        getWorld().removeObject(this);
+         return true;}
+        
+        else {
+            getWorld().removeObject(this);
+            return false;
+        }
+            
+    }*/
 }
