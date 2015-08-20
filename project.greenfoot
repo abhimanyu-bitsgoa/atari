@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Thu Aug 20 15:21:04 IST 2015
+#Thu Aug 20 16:35:32 IST 2015
 target2.width=80
 target5.naviview.expanded=true
 target1.type=ClassTarget
@@ -120,12 +120,13 @@ target7.name=DoubleBrick
 target2.naviview.expanded=true
 package.numDependencies=9
 package.numTargets=7
+class.Score.image=asteroid.png
 class.PowerBrick.superclass=Bricks
 target6.editor.width=818
 dependency1.type=UsesDependency
 target4.type=ClassTarget
 dependency8.to=Bricks
-simulation.speed=49
+simulation.speed=50
 target7.height=50
 dependency5.type=UsesDependency
 dependency9.type=UsesDependency
