@@ -47,6 +47,10 @@ public class Paddle extends Actor
         
     }
     
+    /**
+     * moves the paddle to a given distance in x direction
+     */
+    
     public void move(int dist)
     {
         setLocation (getX() + dist, getY());
@@ -55,6 +59,9 @@ public class Paddle extends Actor
         }
     }
     
+    /**
+     * creates a new ball
+     */
     public void newBall()
     {
         myBall = new Ball();

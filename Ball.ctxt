@@ -16,6 +16,7 @@ comment4.target=void\ checkOut()
 comment4.text=\n\ Check\ whether\ we're\ out\ (bottom\ of\ screen).\n
 comment5.params=
 comment5.target=void\ checkPaddle()
+comment5.text=\n\ Reflection\ of\ ball\ relative\ to\ the\ position\ of\ paddle\n
 comment6.params=dist
 comment6.target=void\ move(int)
 comment6.text=\n\ Move\ the\ ball\ a\ given\ distance\ sideways.\n

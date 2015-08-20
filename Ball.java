@@ -63,6 +63,9 @@ public class Ball extends Actor
         
             
         if (getX() == 0 || getX() == getWorld().getWidth()-1) {
+            /**
+             * Tunneling of ball takes place
+             */
             if(randomNo<50)
             {
                 if(getX()==0)setLocation(getWorld().getWidth()-2, getY());
@@ -91,6 +94,9 @@ public class Ball extends Actor
         }
     }
     
+    /**
+     * Reflection of ball relative to the position of paddle
+     */
     private void checkPaddle()
     {
         Actor paddle = getOneIntersectingObject(Paddle.class);

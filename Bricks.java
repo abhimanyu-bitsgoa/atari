@@ -15,8 +15,12 @@ public class Bricks extends Actor
     public void act() 
     {
         // Add your action code here.
-    }    
+    }  
     
+    
+    /**
+     * checking whether ball is touching the brick
+     */
     public boolean checkBall()
     {
         if(getOneIntersectingObject(Ball.class)!=null)return true;
