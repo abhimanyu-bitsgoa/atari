@@ -1,19 +1,36 @@
 import greenfoot.*;
+import java.awt.*;
 
-/**
- * Write a description of class Score here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
+
 public class Score extends Actor
 {
-    /**
-     * Act - do whatever the Score wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
+    
+    private GreenfootImage img;
+    
+    private int score;
+    
+    
+   public Score()
+   {
+       score=0;
+ 
+       update();
+    }
+    
+    public void addScore()
     {
-        // Add your action code here.
-    }    
+        score++;
+        update();
+    }
+    
+    public void update()
+    {
+       setImage("asteroid.png");
+       img=new GreenfootImage(""+score,40,Color.WHITE,null,Color.BLUE);
+       getImage().drawImage(img, 40, 50);
+        
+       
+    }
+    
 }

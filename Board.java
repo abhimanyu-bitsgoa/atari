@@ -25,6 +25,7 @@ public class Board extends World
         
         paddle = new Paddle();
         addObject ( paddle, getWidth() / 2, getHeight() - 40);
+        addObject(new Score(),58,56);
         addObject(new SimpleBrick(), 380, 260);
         addObject(new DoubleBrick(), 480, 260);
     };
