@@ -154,11 +154,12 @@ public class Ball extends Actor
       * To solve ball pad bug
       */
     
-     public void ballTunnel()
+     public void ballTunnel(int x,int y)
     {
         
-            ((Board) getWorld()).ballIsOut();
-            getWorld().removeObject(this);
+            
+            
+            setLocation(x,y-35);
             
         
     }
