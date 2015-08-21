@@ -33,4 +33,9 @@ public class Score extends Actor
        
     }
     
+    public int getScore()
+    {
+        return score;
+    }
+    
 }

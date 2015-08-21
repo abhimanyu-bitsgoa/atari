@@ -1,4 +1,6 @@
 import greenfoot.*; 
+import java.util.*;
+import java.awt.Color;
 
 /**
  * The game board. The board had a paddle that can move.
@@ -9,11 +11,16 @@ import greenfoot.*;
 public class Board extends World
 {
     private Paddle paddle;
+    private Score s;
+    private int numberOfLives=3;
+    private List objects;
+    private GreenfootImage gameOver,scoreBoard;
 
     /**
      * Constructor for objects of class Board.
      * 
      */
+    private Lives lives[]=new Lives[3];
     public Board()
     {    
         super(960, 620, 1);
@@ -22,18 +29,36 @@ public class Board extends World
         setBackground(img);
 
         setPaintOrder ( Ball.class, Smoke.class );
-        Score s=new Score();
+        s=new Score();
+        addObject(s,58,56);
 
         paddle = new Paddle(s);
         addObject ( paddle, getWidth() / 2, getHeight() - 40);
 
-        addObject(s,58,56);
+        
+        
+        createLives();
 
         createBlocks();
 
         prepare();
     }
 
+    
+    
+        private void createLives()
+        {
+            int x=863,y=35,deltaX=30;
+        
+          for(int i=0;i<lives.length;i++)
+          {
+            lives[i]=new Lives();
+            addObject(lives[i],x,y);
+            x+=deltaX;
+          }
+       }
+       
+       
     private void createBlocks()
     {
         int deltaX= 67 ,deltaY= 52 ,x,y= 121,randomNo;
@@ -56,6 +81,16 @@ public class Board extends World
 
     public void ballIsOut()
     {
+        
+        removeObject(lives[3-numberOfLives]);
+        numberOfLives--;
+        if(checkLife())
+        {
+            objects=getObjects(Bricks.class);
+            removeObjects(objects);
+            gameOver();
+        }
+        
         paddle.newBall();
     }
 
@@ -100,4 +135,24 @@ public class Board extends World
     public Paddle getPaddle(){
         return paddle;
     }
+    
+    private boolean checkLife()
+    {
+        if(numberOfLives==0)return true;
+        else return false;
+    }
+    
+    private void gameOver()
+    {
+         scoreBoard=new GreenfootImage("Final Score : "+s.getScore(),40,Color.WHITE,null,Color.BLUE);
+        gameOver=new GreenfootImage("GAME OVER",60,Color.WHITE,null,Color.BLUE);
+
+        
+        getBackground().drawImage(gameOver,297,173);
+        getBackground().drawImage(scoreBoard,317,173+100);
+        
+    }
+    
+    
+        
 }
