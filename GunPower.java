@@ -12,27 +12,58 @@ public class GunPower extends Powerups
      * Act - do whatever the GunPower wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    
+    Board bworld ;
+    Paddle mPad;
+    Bullet bullet;
+    Boolean gun=false;
     
     public void act() 
     {
         // Add your action code here.
         drop();
-        absorb("GunPower.png");
+        absorb();
+        shoot();
+        
     }    
     
-    /*
+    
+    
+    public void shoot(){
+        if((Greenfoot.isKeyDown("space"))&&(gun==true)){
+        
+        
+        bworld =(Board)getWorld();
+        mPad=bworld.getPaddle();
+        
+        bullet=new Bullet();
+        
+       ((Board) getWorld()).addObject(bullet,mPad.getX(),mPad.getY());
+       
+       
+       /*try {
+     Thread.currentThread().sleep(20);
+}
+catch(InterruptedException ie){} ;*/
+
+    
+    
+       
+    }
+    }
+    
     public void absorb(){
     
         if(this.isTouching(Paddle.class)){
-            
+        gun=true;
        //change pad image by getting Paddle instance object
        bworld =(Board)getWorld();
        mPad=bworld.getPaddle();
        mPad.setImage("GunPower.png");
-       getWorld().removeObject(this);
+       //getWorld().removeObject(this);
        powerStart=System.currentTimeMillis();
        timeToken=1;
+       GreenfootImage im=new GreenfootImage(1,1);
+       this.setImage(im);
        
        // Removes the powerup from world
         }
@@ -45,12 +76,15 @@ public class GunPower extends Powerups
         if((((powerCurrent-powerStart)/1000)>=3)){
         //bworld=(Board)getWorld();
         //mPad=bworld.getPaddle();
+        gun=false;
         mPad.setImage("Player.png");
         timeToken=0;
         powerCurrent=0;
+        
+        getWorld().removeObject(this);
     }
         
     
-    }*/
+    }
     
 }

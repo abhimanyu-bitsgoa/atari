@@ -70,7 +70,7 @@ public class Board extends World
             while(x<getWidth()-163)
             {
                 randomNo=Greenfoot.getRandomNumber(100);
-                if(randomNo<20)
+                if(randomNo<100)
                     addObject(new PowerBrick(),x, y);
                 else
                 if(randomNo<50)

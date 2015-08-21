@@ -40,9 +40,11 @@ public class Powerups extends Actor
        bworld =(Board)getWorld();
        mPad=bworld.getPaddle();
        mPad.setImage(imageName);
-       getWorld().removeObject(this);
+      // getWorld().removeObject(this);
        powerStart=System.currentTimeMillis();
        timeToken=1;
+       GreenfootImage im=new GreenfootImage(1,1);
+       this.setImage(im);
        
        // Removes the powerup from world
         }
@@ -58,6 +60,7 @@ public class Powerups extends Actor
         mPad.setImage("Player.png");
         timeToken=0;
         powerCurrent=0;
+        getWorld().removeObject(this);
     }
    
    }
