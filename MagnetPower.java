@@ -14,18 +14,14 @@ public class MagnetPower extends Powerups
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    long powerStart;
-    long powerCurrent;
-    int timeToken=0;
-    Board bworld ;
-    Paddle mPad;
+    
 
     public void act() 
     {
         // Add your action code here.
         
         drop();
-        absorb();
+        absorb("magnetPlayer.png");
        
         
     }    
@@ -41,7 +37,7 @@ public void magnet(){
 
 }*/
 
- public void absorb(){
+ /*public void absorb(){
     
         if(this.isTouching(Paddle.class)){
             
@@ -71,7 +67,7 @@ public void magnet(){
         
     
     }
-
+*/
 }
 
 

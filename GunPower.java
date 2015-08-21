@@ -12,20 +12,16 @@ public class GunPower extends Powerups
      * Act - do whatever the GunPower wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    long powerStart;
-    long powerCurrent;
-    int timeToken=0;
-    Board bworld ;
-    Paddle mPad;
+    
     
     public void act() 
     {
         // Add your action code here.
         drop();
-        absorb();
+        absorb("GunPower.png");
     }    
     
-    
+    /*
     public void absorb(){
     
         if(this.isTouching(Paddle.class)){
@@ -55,6 +51,6 @@ public class GunPower extends Powerups
     }
         
     
-    }
+    }*/
     
 }
