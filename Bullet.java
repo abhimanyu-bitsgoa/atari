@@ -13,7 +13,7 @@ public class Bullet extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     Actor hitBrick;
-   
+    Board bworld;
     
     public void act() 
     {
@@ -50,6 +50,8 @@ public class Bullet extends Actor
         hitBrick = getOneIntersectingObject(Bricks.class);
         getWorld().removeObject(hitBrick);
         //this.setImage("null.png");
+        bworld=(Board)getWorld();
+        bworld.getBulletHit().addScore();
         getWorld().removeObject(this);
         
     }
