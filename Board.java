@@ -25,13 +25,13 @@ public class Board extends World
     public Board()
     {    
         super(960, 620, 1);
-        GreenfootImage img=new GreenfootImage("Space.png");
+        GreenfootImage img=new GreenfootImage("ironman2.jpg");
         img.scale(getWidth(),getHeight());
         setBackground(img);
 
         setPaintOrder ( Ball.class, Smoke.class );
         s=new Score();
-        addObject(s,58,56);
+        addObject(s,58,93);
 
         paddle = new Paddle(s);
         addObject ( paddle, getWidth() / 2, getHeight() - 40);
@@ -41,6 +41,12 @@ public class Board extends World
         createLives();
 
         createBlocks();
+        GreenfootSound music = new GreenfootSound("ironsound.mp3");
+ 
+if(!music.isPlaying())
+{
+    music.play();
+}
     }
 
     

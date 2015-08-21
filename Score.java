@@ -26,9 +26,9 @@ public class Score extends Actor
     
     public void update()
     {
-       setImage("asteroid.png");
+       setImage("Scoreiron.png");
        img=new GreenfootImage(""+score,40,Color.WHITE,null,Color.BLUE);
-       getImage().drawImage(img, 40, 50);
+       getImage().drawImage(img, 60, 11);
         
        
     }
