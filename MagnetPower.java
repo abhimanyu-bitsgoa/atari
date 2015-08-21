@@ -26,7 +26,9 @@ public class MagnetPower extends Powerups
         
         drop();
         absorb();
-       
+        try{
+        if(getY()==(getWorld().getHeight()-1)){
+        powerRemove();}}catch(Exception e){}
         
     }    
   /*  
@@ -52,8 +54,7 @@ public void absorb(){
        //getWorld().removeObject(this);
        powerStart=System.currentTimeMillis();
        timeToken=1;
-       GreenfootImage im=new GreenfootImage(1,1);
-       this.setImage(im);
+       powerRemove();
        
        // Removes the powerup from world
         }

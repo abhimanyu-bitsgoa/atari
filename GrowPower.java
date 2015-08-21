@@ -18,6 +18,9 @@ public class GrowPower extends Powerups
         // Add your action code here.
         drop();
         absorb("LargeAutoMovePlayer.png");
+        try{
+        if(getY()==(getWorld().getHeight()-1)){
+        powerRemove();}}catch(Exception e){}
     }   
     /*
     public void absorb(){
