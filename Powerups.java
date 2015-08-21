@@ -19,6 +19,7 @@ public class Powerups extends Actor
         // Add your action code here.
         drop();
         
+        
     }  
     
     

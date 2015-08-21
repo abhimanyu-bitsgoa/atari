@@ -19,20 +19,33 @@ public class PowerBrick extends Bricks
         if(checkBall()==true){
         
         int powerType;
-        powerType=Greenfoot.getRandomNumber(3);
+        powerType=Greenfoot.getRandomNumber(5);
         
         
-        if(true){
+        if(powerType==1){
          MagnetPower magnetPow=new MagnetPower();
         ((Board) getWorld()).addObject(magnetPow,getX(),getY());
-        
         getWorld().removeObject(this);
-        
-        //magnetPow.magnet();
-        
-            
-            
         }
+        
+        if(powerType==2){
+         GrowPower growPow=new GrowPower();
+        ((Board) getWorld()).addObject(growPow,getX(),getY());
+        getWorld().removeObject(this);
+        }
+        
+        if(powerType==3){
+         ShrinkPower shrinkPow=new ShrinkPower();
+        ((Board) getWorld()).addObject(shrinkPow,getX(),getY());
+        getWorld().removeObject(this);
+        }
+        
+        if(powerType==4){
+         GunPower gunPow=new GunPower();
+        ((Board) getWorld()).addObject(gunPow,getX(),getY());
+        getWorld().removeObject(this);
+        }
+        
         
     }
     }    
