@@ -3,7 +3,7 @@ comment0.params=
 comment0.target=void\ act()
 comment1.params=
 comment1.target=void\ bulletRise()
-comment1.text=public\ void\ bulletAdd(){\r\n\ \ \ \ \ \ \ \ Board\ bworld\ ;\r\n\ \ \ \ \ \ \ \ Paddle\ mPad;\ \ \ \r\n\ \ \ \ \ \ \ \ bworld\ \=(Board)getWorld();\r\n\ \ \ \ \ \ \ \ mPad\=bworld.getPaddle();\r\n\ \ \ \ \ \ \ \ bullet\=new\ Bullet();\r\n\ \ \ \ \ \ \ \ ((Board)\ getWorld()).addObject(bullet,mPad.getX(),mPad.getY());\r\n}
+comment1.text=public\ void\ bulletAdd(){\n\ \ \ \ \ \ \ \ Board\ bworld\ ;\n\ \ \ \ \ \ \ \ Paddle\ mPad;\ \ \ \n\ \ \ \ \ \ \ \ bworld\ \=(Board)getWorld();\n\ \ \ \ \ \ \ \ mPad\=bworld.getPaddle();\n\ \ \ \ \ \ \ \ bullet\=new\ Bullet();\n\ \ \ \ \ \ \ \ ((Board)\ getWorld()).addObject(bullet,mPad.getX(),mPad.getY());\n}
 comment2.params=
 comment2.target=void\ bulletHit()
 numComments=3

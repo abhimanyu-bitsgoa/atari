@@ -91,7 +91,7 @@ public class Board extends World
     public void ballIsOut()
     {
         
-        removeObject(lives[3-numberOfLives]);
+        if(numberOfLives>0)removeObject(lives[3-numberOfLives]);
         numberOfLives--;
         Greenfoot.playSound("lost_life.mp3");
         if(checkLife())

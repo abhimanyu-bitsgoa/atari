@@ -15,7 +15,7 @@ public class GunPower extends Powerups
     Board bworld ;
     Paddle mPad;
     Bullet bullet;
-    Boolean gun=true;
+    private boolean gun=false;
     
     public void act() 
     {
