@@ -13,7 +13,7 @@ public class Bullet extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     Actor hitBrick;
-    Boolean bulletToken=true;
+   
     
     public void act() 
     {

@@ -15,7 +15,7 @@ public class GunPower extends Powerups
     Board bworld ;
     Paddle mPad;
     Bullet bullet;
-    Boolean gun=false;
+    Boolean gun=true;
     
     public void act() 
     {
@@ -29,7 +29,7 @@ public class GunPower extends Powerups
     
     
     public void shoot(){
-        if((Greenfoot.isKeyDown("space"))&&(gun==true)){
+        if("up".equals(Greenfoot.getKey())&&(gun==true)){
         
         
         bworld =(Board)getWorld();
