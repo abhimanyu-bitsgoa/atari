@@ -106,7 +106,8 @@ public class Ball extends Actor
     private void checkPaddle()
     {
         Actor paddle = getOneIntersectingObject(Paddle.class);
-        if (paddle != null) {
+           if (paddle != null) {
+            
             Greenfoot.playSound("blip1.wav");
             deltaY = -deltaY;
             int offset = getX() - paddle.getX();

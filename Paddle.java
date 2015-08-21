@@ -11,6 +11,8 @@ public class Paddle extends Actor
 {
     private Ball myBall;// used before ball gets released
     private Score score;
+    public Paddle mPad;
+    Actor ballKill;
     
     Paddle(Score s)
     {
@@ -76,7 +78,7 @@ public class Paddle extends Actor
     public void newBall()
     {
         myBall = new Ball(score);
-        getWorld().addObject (myBall, getX(), getY()-33);
+        getWorld().addObject (myBall, getX(), getY()-35);
     }
         
     public boolean haveBall()
@@ -89,5 +91,16 @@ public class Paddle extends Actor
         myBall.release();
         myBall = null;
     }
+      
+    public void magnetTouch(){
+        //mPad=((Board)getWorld()).getPaddle();
+        if(this.isTouching(Ball.class)){
+            //((Board)getWorld()).ballIsOut();
+            ballKill = getOneIntersectingObject(Ball.class);
+            getWorld().removeObject(ballKill);
+            newBall();        
+            
         
+        }
+    }
 }

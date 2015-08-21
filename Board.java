@@ -15,6 +15,7 @@ public class Board extends World
     private int numberOfLives=3;
     private List objects;
     private GreenfootImage gameOver,scoreBoard;
+    public boolean magnetLife=false;
 
     /**
      * Constructor for objects of class Board.
@@ -110,6 +111,7 @@ public class Board extends World
     public Paddle getPaddle(){
         return paddle;
     }
+    
     
     
     
