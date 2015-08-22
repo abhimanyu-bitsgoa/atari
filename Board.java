@@ -22,8 +22,11 @@ public class Board extends World
      */
     private Lives lives[]=new Lives[3];
     public Board()
-    {    
+    {   
+       
+        
         super(960, 620, 1);
+       
         GreenfootImage img=new GreenfootImage("Space.png");
         img.scale(getWidth(),getHeight());
         setBackground(img);
@@ -40,6 +43,8 @@ public class Board extends World
         createLives();
 
         createBlocks();
+    
+        
     }
 
     
@@ -70,7 +75,7 @@ public class Board extends World
             while(x<getWidth()-163)
             {
                 randomNo=Greenfoot.getRandomNumber(100);
-                if(randomNo<100)
+                if(randomNo<20)
                     addObject(new PowerBrick(),x, y);
                 else
                 if(randomNo<50)
