@@ -20,7 +20,7 @@ public class PowerBrick extends Bricks
         
         int powerType;
         powerType=Greenfoot.getRandomNumber(5);
-        powerType=4;
+        //powerType=4;
         
         if(powerType==1){
          MagnetPower magnetPow=new MagnetPower();
