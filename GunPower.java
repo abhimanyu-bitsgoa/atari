@@ -15,12 +15,17 @@ public class GunPower extends Powerups
     Board bworld ;
     Paddle mPad;
     Bullet bullet;
-    private boolean gun=false;
+    boolean gun=false;
+    long powerStart,bulletStart;
+    long PowerCurrent,bulletCurrent;
+    int timeToken,timeToken2;
+    
     
     public void act() 
     {
         // Add your action code here.
         drop();
+      
         absorb();
         shoot();
         try{
@@ -31,9 +36,12 @@ public class GunPower extends Powerups
     
     
     public void shoot(){
-        if("up".equals(Greenfoot.getKey())&&(gun==true)){
-        
-        
+        //if("up".equals(Greenfoot.getKey())&&(gun==true)){
+            
+         bulletCurrent=System.currentTimeMillis();
+        if((Greenfoot.isKeyDown("up"))&&(gun==true)&&((bulletCurrent-bulletStart)/1000)>0.0001){
+            
+        bulletStart=System.currentTimeMillis();
         bworld =(Board)getWorld();
         mPad=bworld.getPaddle();
         
@@ -41,16 +49,15 @@ public class GunPower extends Powerups
         
        ((Board) getWorld()).addObject(bullet,mPad.getX(),mPad.getY());
        
-       
+       bulletCurrent=0;
        /*try {
      Thread.currentThread().sleep(20);
 }
 catch(InterruptedException ie){} ;*/
 
-    
-    
-       
     }
+       
+    
     }
     
     public void absorb(){
@@ -58,7 +65,7 @@ catch(InterruptedException ie){} ;*/
         if(this.isTouching(Paddle.class)){
         gun=true;
        //change pad image by getting Paddle instance object
-       bworld =(Board)getWorld();
+        bworld =(Board)getWorld();
        mPad=bworld.getPaddle();
        mPad.setImage("GunPower.png");
        //getWorld().removeObject(this);
@@ -74,7 +81,7 @@ catch(InterruptedException ie){} ;*/
          //mPad.setImage("ball.png");
        }
          
-        if((((powerCurrent-powerStart)/1000)>=3)){
+        if((((powerCurrent-powerStart)/1000)>=7)){
         //bworld=(Board)getWorld();
         //mPad=bworld.getPaddle();
         gun=false;
@@ -84,8 +91,7 @@ catch(InterruptedException ie){} ;*/
         
         getWorld().removeObject(this);
     }
-        
-    
-    }
-    
 }
+}
+
+

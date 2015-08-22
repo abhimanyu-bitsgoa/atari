@@ -53,7 +53,7 @@ public class Powerups extends Actor
          //mPad.setImage("ball.png");
        }
          
-        if((((powerCurrent-powerStart)/1000)>=3)){
+        if((((powerCurrent-powerStart)/1000)>=7)){
         //bworld=(Board)getWorld();
         //mPad=bworld.getPaddle();
         mPad.setImage("Player.png");

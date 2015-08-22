@@ -3,5 +3,5 @@ comment0.params=
 comment0.target=void\ act()
 comment1.params=
 comment1.target=void\ absorb()
-comment1.text=\ \ \npublic\ void\ magnet(){\n\n\n\ \ \ \ \ \ \ Board\ bworld\ \=(Board)getWorld();\n\ \ \ \ \ \ \ Paddle\ mPad\=bworld.getPaddle();\n\ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ mPad.setImage("magnetPlayer.png");\n\ \ \ \ \n\n}
+comment1.text=\ \ \r\npublic\ void\ magnet(){\r\n\r\n\r\n\ \ \ \ \ \ \ Board\ bworld\ \=(Board)getWorld();\r\n\ \ \ \ \ \ \ Paddle\ mPad\=bworld.getPaddle();\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ mPad.setImage("magnetPlayer.png");\r\n\ \ \ \ \r\n\r\n}
 numComments=2

@@ -18,9 +18,9 @@ public class Bullet extends Actor
     public void act() 
     {
         // Add your action code here.
-        GreenfootImage img=new GreenfootImage("bullet.png");
+        /*GreenfootImage img=new GreenfootImage("bullet.png");
         img.scale(48,48);
-        setImage(img);
+        setImage(img);*/
         bulletRise();
         
         bulletHit();
