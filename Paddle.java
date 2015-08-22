@@ -14,7 +14,8 @@ public class Paddle extends Actor
     private Score score;
     public Paddle mPad;
     Actor ballKill;
-    
+    GreenfootSound music;
+    boolean musicToken=true;
     
     Paddle(Score s)
     {
@@ -36,6 +37,22 @@ public class Paddle extends Actor
      */
     public void act() 
     {
+        //Music attatch to paddle
+        
+        
+        
+        if((Greenfoot.isKeyDown("p"))&&musicToken==true)
+            {   music = new GreenfootSound("ironsound.mp3");
+                 music.play();
+                 musicToken=false;
+          }
+        if((Greenfoot.isKeyDown("s"))&&musicToken==false)
+            {
+                 music.stop();
+                 musicToken=true;
+          }
+        
+        
          if(getX()==(getWorld().getWidth()-1) && Greenfoot.isKeyDown ("right"))
         {
             setLocation(0,getY());

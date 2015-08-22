@@ -51,12 +51,12 @@ public class Board extends World
    
         
 
-        GreenfootSound music = new GreenfootSound("ironsound.mp3");
+        /*GreenfootSound music = new GreenfootSound("ironsound.mp3");
  
         if(!music.isPlaying())
             {
                 // music.play();
-          }
+          }*/
 }
 
 
