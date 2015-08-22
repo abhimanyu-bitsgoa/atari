@@ -13,23 +13,26 @@ public class Ball extends Actor
     private int deltaY;         // y movement speed
     private int count = 2;
     private Score score;
-    private boolean stuck = true; // stuck to paddle
+    private boolean stuck = true;
+    // stuck to paddle
     
     
     Ball(Score s)
     {
         score=s;
+        
     }
     /**
      * Act. Move if we're not stuck.
      */
     public void act() 
     {
-        if (!stuck) 
+        boolean temp=selfDestroy();
+        if (!stuck&&!temp) 
         {
             move();
             makeSmoke();
-            if(!selfDestroy())
+            if(!temp)
             checkOut();
             
         }

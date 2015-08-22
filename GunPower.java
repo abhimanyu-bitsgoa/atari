@@ -39,7 +39,7 @@ public class GunPower extends Powerups
         //if("up".equals(Greenfoot.getKey())&&(gun==true)){
             
          bulletCurrent=System.currentTimeMillis();
-        if((Greenfoot.isKeyDown("up"))&&(gun==true)&&((bulletCurrent-bulletStart)/1000)>0.0001){
+        if((Greenfoot.isKeyDown("up"))&&(gun==true)&&((bulletCurrent-bulletStart)/1000)>0.01){
             
         bulletStart=System.currentTimeMillis();
         bworld =(Board)getWorld();

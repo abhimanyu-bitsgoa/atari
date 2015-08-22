@@ -97,9 +97,9 @@ public class Paddle extends Actor
     public void move(int dist)
     {
         setLocation (getX() + dist, getY());
-        if (myBall != null) {
+       
             myBall.move (dist);
-        }
+        
     }
     
     /**

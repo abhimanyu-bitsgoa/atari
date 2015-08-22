@@ -12,9 +12,9 @@ public class Board extends World
 {
     private Paddle paddle;
     private Score s;
-    public int numberOfLives=3,levelNumber=1;
+    public int numberOfLives=3,levelNumber=0;
     private List objects;
-    private GreenfootImage img,gameOver,scoreBoard;
+    private GreenfootImage img,gameOver,scoreBoard,level;
     public boolean magnetLife=false;
 
     /**
@@ -34,7 +34,7 @@ public class Board extends World
       img=new GreenfootImage("ironman2.jpg");
 
         img.scale(getWidth(),getHeight());
-        setBackground(img);
+        setBackground(img);       
 
         setPaintOrder ( Ball.class, Smoke.class );
         s=new Score();
@@ -71,14 +71,14 @@ public class Board extends World
     {
         
         displayLevel();
-        int deltaX= 67 ,deltaY= 52 ,x,y= 121,randomNo;
+        int deltaX= 67 ,deltaY= 32 ,x,y= 121,randomNo;
         while(y<getHeight()/2)
         {
             x=163;
             while(x<getWidth()-163)
             {
                 randomNo=Greenfoot.getRandomNumber(100);
-                if(randomNo<100)
+                if(randomNo<20)
                     addObject(new PowerBrick(),x, y);
                 else
                 if(randomNo<50)
@@ -95,10 +95,12 @@ public class Board extends World
     
     private void displayLevel()
     {
-        setBackground(img);
-        GreenfootImage level=new GreenfootImage("LEVEL "+levelNumber,40,Color.WHITE,null,Color.BLUE);
-        getBackground().drawImage(level,364, 3);
-        levelNumber++;
+       
+      img=new GreenfootImage("ironman2.jpg");
+       setBackground(img);
+        level=new GreenfootImage("LEVEL "+(++levelNumber),40,Color.WHITE,null,Color.BLUE);
+        getBackground().drawImage(level,393,32);
+        
         
              
     }
@@ -168,6 +170,7 @@ public class Board extends World
         
         getBackground().drawImage(gameOver,297,173);
         getBackground().drawImage(scoreBoard,317,173+100);
+        paddle.newBall();
         
     }
     

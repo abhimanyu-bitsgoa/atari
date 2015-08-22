@@ -18,9 +18,9 @@ public class Bullet extends Actor
     public void act() 
     {
         // Add your action code here.
-        /*GreenfootImage img=new GreenfootImage("bullet.png");
-        img.scale(48,48);
-        setImage(img);*/
+        GreenfootImage img=new GreenfootImage("bullet.png");
+        img.scale(60,60);
+        setImage(img);
         bulletRise();
         
         bulletHit();
@@ -52,6 +52,7 @@ public class Bullet extends Actor
         if((this.isTouching(Bricks.class))){
         hitBrick = getOneIntersectingObject(Bricks.class);
         getWorld().removeObject(hitBrick);
+        Greenfoot.playSound("explosion.wav");
         //this.setImage("null.png");
         bworld=(Board)getWorld();
         bworld.getBulletHit().addScore();

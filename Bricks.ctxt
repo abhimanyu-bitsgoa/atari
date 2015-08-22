@@ -1,5 +1,5 @@
 #BlueJ class context
 comment0.params=
 comment0.target=boolean\ checkBall()
-comment0.text=\r\n\ checking\ whether\ ball\ is\ touching\ the\ brick\r\n
+comment0.text=\n\ checking\ whether\ ball\ is\ touching\ the\ brick\n
 numComments=1
