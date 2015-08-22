@@ -39,6 +39,14 @@ public class Paddle extends Actor
     {
         //Music attatch to paddle
         
+        if(getWorld().getObjects(Bricks.class).isEmpty()&&((Board)getWorld()).numberOfLives>0)
+        {
+            
+            
+            
+             ((Board)getWorld()).createBlocks();
+            newBall();
+        }
         
         
         if((Greenfoot.isKeyDown("p"))&&musicToken==true)
@@ -76,14 +84,6 @@ public class Paddle extends Actor
             releaseBall();
         }
         
-        if(getWorld().getObjects(Bricks.class).isEmpty()&&((Board)getWorld()).numberOfLives>0)
-        {
-            
-            
-            
-             ((Board)getWorld()).createBlocks();
-            newBall();
-        }
         
         
        
@@ -97,8 +97,10 @@ public class Paddle extends Actor
     public void move(int dist)
     {
         setLocation (getX() + dist, getY());
-       
+       try {
             myBall.move (dist);
+        }
+        catch(Exception e){};
         
     }
     

@@ -170,7 +170,7 @@ public class Board extends World
         
         getBackground().drawImage(gameOver,297,173);
         getBackground().drawImage(scoreBoard,317,173+100);
-        paddle.newBall();
+        
         
     }
     
