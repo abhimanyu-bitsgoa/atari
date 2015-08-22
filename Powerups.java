@@ -35,7 +35,7 @@ public class Powerups extends Actor
     
     public void absorb(String imageName){
     if(this.isTouching(Paddle.class)){
-            
+            //||getY()==getWorld().getHeight()-1
        //change pad image by getting Paddle instance object
        bworld =(Board)getWorld();
        mPad=bworld.getPaddle();
@@ -43,10 +43,9 @@ public class Powerups extends Actor
       // getWorld().removeObject(this);
        powerStart=System.currentTimeMillis();
        timeToken=1;
-       GreenfootImage im=new GreenfootImage(1,1);
-       this.setImage(im);
+       powerRemove();
        
-       // Removes the powerup from world
+       
         }
         
        if(timeToken==1){
@@ -60,8 +59,23 @@ public class Powerups extends Actor
         mPad.setImage("Player.png");
         timeToken=0;
         powerCurrent=0;
-        getWorld().removeObject(this);
+       getWorld().removeObject(this);
     }
    
    }
+   
+   public void powerRemove(){
+       
+        
+        
+       GreenfootImage im=new GreenfootImage(1,1);
+       this.setImage(im);
+    
+    }
+    
+    public void powerDelete(){
+        getWorld().removeObject(this);
+    }
+    
+   
 }

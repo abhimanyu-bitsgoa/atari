@@ -1,4 +1,5 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
+import java.util.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * The game paddle. It is keyboard controlled (left, right, space). It also 
@@ -11,10 +12,14 @@ public class Paddle extends Actor
 {
     private Ball myBall;// used before ball gets released
     private Score score;
+    public Paddle mPad;
+    Actor ballKill;
+    
     
     Paddle(Score s)
     {
         score=s;
+        
     }
 
     /**
@@ -35,14 +40,14 @@ public class Paddle extends Actor
         {
             setLocation(0,getY());
            if(myBall!=null)
-            myBall.ballTunnel();
+            myBall.ballTunnel(getX(),getY());
             
         }
         if(getX()==0 && Greenfoot.isKeyDown ("left"))
         {
             setLocation(getWorld().getWidth(),getY());
             if(myBall!=null)
-            myBall.ballTunnel();
+            myBall.ballTunnel(getX(),getY());
         }
         if (Greenfoot.isKeyDown ("left")) {
             move(-9);
@@ -53,6 +58,16 @@ public class Paddle extends Actor
         if (haveBall() && Greenfoot.isKeyDown ("space")) {
             releaseBall();
         }
+        
+        if(getWorld().getObjects(Bricks.class).isEmpty()&&((Board)getWorld()).numberOfLives>0)
+        {
+            
+            
+            
+             ((Board)getWorld()).createBlocks();
+            newBall();
+        }
+        
         
        
         
@@ -76,7 +91,7 @@ public class Paddle extends Actor
     public void newBall()
     {
         myBall = new Ball(score);
-        getWorld().addObject (myBall, getX(), getY()-33);
+        getWorld().addObject (myBall, getX(), getY()-35);
     }
         
     public boolean haveBall()
@@ -89,5 +104,16 @@ public class Paddle extends Actor
         myBall.release();
         myBall = null;
     }
+      
+    public void magnetTouch(){
+        //mPad=((Board)getWorld()).getPaddle();
+        if(this.isTouching(Ball.class)){
+            //((Board)getWorld()).ballIsOut();
+            ballKill = getOneIntersectingObject(Ball.class);
+            getWorld().removeObject(ballKill);
+            newBall();        
+            
         
+        }
+    }
 }

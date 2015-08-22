@@ -9,16 +9,6 @@ import greenfoot.*;
 public class Bricks extends Actor
 {
     
-
-    public void act() 
-    {
-        // Add your action code here.
-    }  
-    
-   
-        
-    
-    
     /**
      * checking whether ball is touching the brick
      */

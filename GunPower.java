@@ -23,9 +23,11 @@ public class GunPower extends Powerups
         drop();
         absorb();
         shoot();
+        try{
+        if(getY()==(getWorld().getHeight()-1)){
+        powerRemove();}}catch(Exception e){}
         
-    }    
-    
+    }
     
     
     public void shoot(){
@@ -62,8 +64,7 @@ catch(InterruptedException ie){} ;*/
        //getWorld().removeObject(this);
        powerStart=System.currentTimeMillis();
        timeToken=1;
-       GreenfootImage im=new GreenfootImage(1,1);
-       this.setImage(im);
+       powerRemove();
        
        // Removes the powerup from world
         }

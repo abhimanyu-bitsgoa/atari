@@ -20,7 +20,7 @@ public class PowerBrick extends Bricks
         
         int powerType;
         powerType=Greenfoot.getRandomNumber(5);
-        powerType=4;
+        //powerType=4;
         
         if(powerType==1){
          MagnetPower magnetPow=new MagnetPower();
@@ -28,19 +28,19 @@ public class PowerBrick extends Bricks
         getWorld().removeObject(this);
         }
         
-        if(powerType==2){
+        else if(powerType==2){
          GrowPower growPow=new GrowPower();
         ((Board) getWorld()).addObject(growPow,getX(),getY());
         getWorld().removeObject(this);
         }
         
-        if(powerType==3){
+        else if(powerType==3){
          ShrinkPower shrinkPow=new ShrinkPower();
         ((Board) getWorld()).addObject(shrinkPow,getX(),getY());
         getWorld().removeObject(this);
         }
         
-        if(powerType==4){
+        else if(powerType==4){
          GunPower gunPow=new GunPower();
         ((Board) getWorld()).addObject(gunPow,getX(),getY());
         getWorld().removeObject(this);

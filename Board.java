@@ -12,9 +12,10 @@ public class Board extends World
 {
     private Paddle paddle;
     private Score s;
-    private int numberOfLives=3;
+    public int numberOfLives=3,levelNumber=1;
     private List objects;
-    private GreenfootImage gameOver,scoreBoard;
+    private GreenfootImage img,gameOver,scoreBoard;
+    public boolean magnetLife=false;
 
     /**
      * Constructor for objects of class Board.
@@ -26,48 +27,50 @@ public class Board extends World
        
         
         super(960, 620, 1);
+
        
-        GreenfootImage img=new GreenfootImage("Space.png");
+        img=new GreenfootImage("Space.png");
+
+      img=new GreenfootImage("ironman2.jpg");
+
         img.scale(getWidth(),getHeight());
         setBackground(img);
 
         setPaintOrder ( Ball.class, Smoke.class );
         s=new Score();
-        addObject(s,58,56);
-
+        addObject(s,58,93);
+        createLives();
+       
         paddle = new Paddle(s);
         addObject ( paddle, getWidth() / 2, getHeight() - 40);
 
-        
-        
-        createLives();
-
         createBlocks();
-    
+           
+            
+
+   
         
-    }
+
+        GreenfootSound music = new GreenfootSound("ironsound.mp3");
+ 
+        if(!music.isPlaying())
+            {
+                // music.play();
+          }
+}
+
+
 
     
+
     
-        private void createLives()
-        {
-            int x=863,y=35,deltaX=30;
-        
-          for(int i=0;i<lives.length;i++)
-          {
-            lives[i]=new Lives();
-            addObject(lives[i],x,y);
-            x+=deltaX;
-          }
-       }
-       
-       
-       
-       /**
+        /**
         * Creates the blocks 
         */
-    private void createBlocks()
+    public void createBlocks()
     {
+        
+        displayLevel();
         int deltaX= 67 ,deltaY= 52 ,x,y= 121,randomNo;
         while(y<getHeight()/2)
         {
@@ -89,6 +92,32 @@ public class Board extends World
 
     }
     
+    
+    private void displayLevel()
+    {
+        setBackground(img);
+        GreenfootImage level=new GreenfootImage("LEVEL "+levelNumber,40,Color.WHITE,null,Color.BLUE);
+        getBackground().drawImage(level,364, 3);
+        levelNumber++;
+        
+             
+    }
+    
+        private void createLives()
+        {
+            int x=863,y=35,deltaX=30;
+        
+          for(int i=0;i<lives.length;i++)
+          {
+            lives[i]=new Lives();
+            addObject(lives[i],x,y);
+            x+=deltaX;
+          }
+       }
+       
+       
+       
+
     /**
      * Triggers necessary events when ball is missed by the bar
      */
@@ -116,6 +145,9 @@ public class Board extends World
         return paddle;
     }
     
+    public Score getBulletHit(){
+        return s;
+    }
     
     
     private boolean checkLife()

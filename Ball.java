@@ -1,4 +1,5 @@
 import greenfoot.*;
+import java.util.*;
 
 /**
  * The ball of the game. It moves and bounces off the walls and the paddle.
@@ -28,7 +29,9 @@ public class Ball extends Actor
         {
             move();
             makeSmoke();
+            if(!selfDestroy())
             checkOut();
+            
         }
     }
     
@@ -106,7 +109,8 @@ public class Ball extends Actor
     private void checkPaddle()
     {
         Actor paddle = getOneIntersectingObject(Paddle.class);
-        if (paddle != null) {
+           if (paddle != null) {
+            
             Greenfoot.playSound("blip1.wav");
             deltaY = -deltaY;
             int offset = getX() - paddle.getX();
@@ -153,16 +157,29 @@ public class Ball extends Actor
       * To solve ball pad bug
       */
     
-     public void ballTunnel()
+     public void ballTunnel(int x,int y)
     {
         
-            ((Board) getWorld()).ballIsOut();
-            getWorld().removeObject(this);
+            
+            
+            setLocation(x,y-35);
             
         
     }
     
-    
-   
+    public boolean selfDestroy()
+    {
+        
+        
+        List objects=getWorld().getObjects(Bricks.class);
+            if(objects.isEmpty())
+            {
+                getWorld().removeObject(this);
+                return true;
+            }
+            else return false;
+        
+              
    }
+}
 

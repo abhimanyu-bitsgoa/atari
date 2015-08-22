@@ -15,14 +15,20 @@ public class MagnetPower extends Powerups
      */
     
     
-
+    Board bworld ;
+    Paddle mPad; 
+    Ball magBall;
+    boolean magPow=false;
+    
     public void act() 
     {
         // Add your action code here.
         
         drop();
-        absorb("magnetPlayer.png");
-       
+        absorb();
+        try{
+        if(getY()==(getWorld().getHeight()-1)){
+        powerRemove();}}catch(Exception e){}
         
     }    
   /*  
@@ -37,17 +43,18 @@ public void magnet(){
 
 }*/
 
- /*public void absorb(){
+public void absorb(){
     
         if(this.isTouching(Paddle.class)){
-            
+        magPow=true;
        //change pad image by getting Paddle instance object
        bworld =(Board)getWorld();
        mPad=bworld.getPaddle();
        mPad.setImage("magnetPlayer.png");
-       getWorld().removeObject(this);
+       //getWorld().removeObject(this);
        powerStart=System.currentTimeMillis();
        timeToken=1;
+       powerRemove();
        
        // Removes the powerup from world
         }
@@ -60,14 +67,24 @@ public void magnet(){
         if((((powerCurrent-powerStart)/1000)>=3)){
         //bworld=(Board)getWorld();
         //mPad=bworld.getPaddle();
+        magPow=false;
         mPad.setImage("Player.png");
         timeToken=0;
         powerCurrent=0;
+        magPow=false;
+        getWorld().removeObject(this);
     }
         
+     if((magPow==true)){
+        
+        mPad.magnetTouch();
+        }
+   
+        
+    
     
     }
-*/
+
 }
 
 
