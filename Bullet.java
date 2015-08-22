@@ -52,7 +52,7 @@ public class Bullet extends Actor
         if((this.isTouching(Bricks.class))){
         hitBrick = getOneIntersectingObject(Bricks.class);
         getWorld().removeObject(hitBrick);
-        Greenfoot.playSound("explosion.wav");
+        
         //this.setImage("null.png");
         bworld=(Board)getWorld();
         bworld.getBulletHit().addScore();
