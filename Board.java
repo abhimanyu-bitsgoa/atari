@@ -29,7 +29,7 @@ public class Board extends World
         super(960, 620, 1);
 
        
-        img=new GreenfootImage("Space.png");
+        //img=new GreenfootImage("Space.png");
 
       img=new GreenfootImage("ironman2.jpg");
 
@@ -97,6 +97,7 @@ public class Board extends World
     {
        
       img=new GreenfootImage("ironman2.jpg");
+      img.scale(getWidth(),getHeight());
        setBackground(img);
         level=new GreenfootImage("LEVEL "+(++levelNumber),40,Color.WHITE,null,Color.BLUE);
         getBackground().drawImage(level,393,32);

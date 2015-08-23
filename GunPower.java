@@ -48,7 +48,7 @@ public class GunPower extends Powerups
         bullet=new Bullet();
         
        ((Board) getWorld()).addObject(bullet,mPad.getX(),mPad.getY());
-       
+       Greenfoot.playSound("explosion.wav");
        bulletCurrent=0;
        /*try {
      Thread.currentThread().sleep(20);
